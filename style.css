@@ -1,0 +1,872 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  margin: 0;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p {
+  margin: 15px 0;
+}
+a {
+  cursor: pointer;
+}
+/* ==========
+ FONTS
+ ========== */
+ @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Bree+Serif&display=swap');
+ @import url('https://fonts.googleapis.com/css?family=Literata&display=swap');
+
+ body {
+   font-family: 'Roboto', sans-serif;
+   color: #121212;
+ }
+/* ==========
+NAVIGATION BAR
+========== */
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left:0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 15px;
+  font-weight: bold;
+  align-items: center;
+  padding: 0 15px;
+  background: white;
+}
+nav .menu-items {
+  display: flex;
+}
+.menu-items div {
+  margin: 8px;
+}
+.menu-items i {
+  font-size: 18px;
+}
+.menu-items .page-category {
+  line-height: 1.3;
+}
+nav .logo {
+  margin-top: 2px;
+}
+button {
+  color: white;
+  background-color: #6288a5;
+  border: 1px solid #326891;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 11px 12px 8px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  line-height: 11px;
+  margin: 5px 2px 5px;
+}
+button:hover {
+  background-color: #326891;
+}
+
+/* ==========
+MAIN SECTION
+========== */
+
+section {
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: 1fr 7fr 3fr 1fr;
+  grid-template-areas:
+    "space1  header        header     space2"
+    "article article       article    article"
+    "space3  more-articles more-links space4"
+    "space3  more-picks    more-links space4"
+    "space3  footer        footer     space4";
+}
+
+/* =========
+SECTION HEADER
+========== */
+
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+header h1 {
+  grid-column: 2 / 4;
+  font-family: 'Bree Serif', serif;
+  font-style: italic;
+  margin: 0;
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+header figure {
+  grid-column: 1 / 5;
+  display: grid;
+  grid-template-columns: 6fr 4fr;
+  margin: 0;
+  margin-left: auto;
+}
+header figure img {
+  grid-column: 1 / 3;
+  width: 100%;
+  max-width: 1255px;
+  max-height: 710px;
+}
+header figure figcaption {
+  grid-column: 1 / 2;
+}
+.photocaption {
+  font-family: 'Literata', serif;
+  font-size: 16px;
+  color: #666;
+  line-height: 1.2;
+  margin: 10px 0;
+  text-align: justify;
+}
+.photocaption span {
+  font-size: 14px;
+  color: #888;
+}
+
+/* ==========
+ARTICLE SECTION
+========== */
+
+article {
+  margin: 30px 0 50px 0;
+  grid-area: article;
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-areas:
+    "empty1   article-header   empty2               empty2"
+    "empty1   article-text-1   signup-sidebar       empty3"
+    "add-1    add-1            add-1                add-1"
+    "empty4   article-text-2   editor-pick-sidebar  empty5"
+    "add-2    add-2            add-2                add-2"
+    "empty6   article-text-3   empty7               empty7"
+    "empty6   infographics     infographics         empty8"
+    "empty6   article-text-4   empty9               empty9"
+    "empty6   video            empty9               empty9"
+    "empty6   article-text-5   empty9               empty9"
+    "empty6   textimage        empty9               empty9"
+    "empty6   article-text-6   empty9               empty9"
+    "empty6   footer           empty9               empty9";
+}
+
+/* ==========
+article HEADER
+========== */
+
+article header {
+  grid-area: article-header;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "author space"
+    "date social";
+}
+article .author {
+  grid-area: author;
+  font-weight: bold;
+  font-size: 15px;
+}
+article .author a {
+  color: #333;
+  text-decoration-color: #ccc;
+}
+article .author a:hover {
+  text-decoration: none;
+}
+article .date {
+  grid-area: date;
+  font-size: 14px;
+  margin: 15px 0;
+}
+article .social {
+  grid-area: social;
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+}
+.social .icon-circle {
+  border-radius: 50%;
+  background-color: #eee;
+  font-size: 14px;
+  padding: 7px;
+  width: 14px;
+  height: 14px;
+  align-self: center;
+  margin: 0 8px;
+}
+.social .icon-circle:hover {
+  background-color: white;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+.social .icon-light {
+  width: 28px;
+  height: 28px;
+  padding: 7px 0;
+  margin-right: 7px;
+}
+.social .icon-light:hover {
+  cursor: pointer;
+}
+
+/* =====================================
+ARTICLE TEXT SECTION
+PART 1 - 6
+======================================= */
+
+article .article-text {
+  font-family: 'Literata', serif;
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+  text-align: justify;
+}
+.article-text a {
+  color: #326891;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.article-text a:hover {
+  text-decoration: none;
+}
+.article-text h2 {
+  margin-top: 1em;
+  font-weight: bold;
+  letter-spacing: normal;
+}
+article .part1 {
+  grid-area: article-text-1;
+}
+article .part2 {
+  grid-area: article-text-2;
+}
+/* ===== text part2 break ===== */
+article .part2 div {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  text-align: center;
+}
+article .part2 .frame {
+  width: 70px;
+  border-top: 1px solid #ccc;
+  margin: 20px;
+}
+.part2 div span,
+.part2 div a {
+  font-size: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+}
+article .part3 {
+  grid-area: article-text-3;
+}
+article .part4 {
+  grid-area: article-text-4;
+}
+/* ==== Video under part4 ===== */
+.video {
+  grid-area: video;
+  justify-self: center;
+  margin: 30px 0;
+}
+article .part5 {
+  grid-area: article-text-5;
+}
+/* ===== image under part5 ===== */
+.textimage {
+  grid-area: textimage;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  margin: 30px 0;
+}
+.textimage img {
+  max-width: 100%;
+}
+article .part6 {
+  grid-area: article-text-6;
+}
+
+/* ==========
+SIGN UP ASIDE (BY PART1)
+========== */
+
+.signup-sidebar {
+  grid-area: signup-sidebar;
+  width: 175px;
+  justify-self: center;
+  line-height: 1.2;
+}
+.signup-sidebar p {
+  font-size: 13px;
+  color: #666;
+  padding: 2px;
+  text-align: justify;
+}
+.signup-sidebar h3 {
+  font-weight: bold;
+  margin: 1em 0;
+}
+.signup-sidebar button {
+  width: 100%;
+  border: none;
+  font-size: 13px;
+  padding: 14px 0 12px 0;
+  border-radius: 5px;
+  margin: 0;
+}
+
+/* ==========
+EDITOR'S PICKS
+ASIDE (BY PART2)
+========== */
+
+.editors-picks {
+  grid-area: editor-pick-sidebar;
+  align-self: center;
+  justify-self: center;
+  width: 220px;
+}
+.editors-picks h4 {
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+.editors-picks .pick {
+  padding: 12px 0;
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  font-family: 'Literata', serif;
+  color: rgb(51, 51, 51);
+  letter-spacing: 0.2px;
+  line-height: 16px;
+}
+.editors-picks .pick img {
+  margin-right: 10px;
+}
+.editors-picks .pick a {
+  align-self: center;
+}
+#paid {
+  background-color: #F6F6F6;
+  font-size: 11px;
+  font-family: 'Roboto', sans-serif;
+}
+#paid span {
+  font-weight: bold;
+}
+/* ==========
+The Theory of Inflation
+INFOGRAPHICS
+========== */
+
+.infographics {
+  grid-area: infographics;
+  margin: 30px 0;
+}
+.infographics h3 {
+  font-weight: bold;
+}
+.infographics p {
+  margin: 0;
+  max-width: 960px;
+  font-size: 16px;
+  color: #666;
+}
+.infographics .process-container {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 230px));
+  grid-gap: 15px;
+  margin-top: 5px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+}
+.infographics h4 {
+  display: inline;
+  font-weight: bold;
+}
+.infographics .author {
+  margin-top: 30px;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #666;
+}
+.infographics .author::before {
+  content: '';
+  width: 60px;
+  display: block;
+  height: 1px;
+  background-color: black;
+  margin-bottom: 15px;
+}
+.infographics img {
+  max-width: 100%;
+}
+
+/* ==========
+ADDS
+========== */
+
+.add1 {
+  grid-area: add-1;
+}
+.add2 {
+  grid-area: add-2;
+}
+.across-add {
+  display: grid;
+  grid-template-columns: 1fr 6fr 4fr 1fr;
+  grid-template-areas:
+    "aside1 add aside aside";
+  margin: 30px 0;
+  background-color: rgb(247, 247, 247);
+  border-top: 1px solid rgb(243, 243, 243);
+  border-bottom: 1px solid rgb(243, 243, 243);
+  color: #ccc;
+  font-size: 10px;
+}
+.across-add .add h3 {
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.across-add img {
+  cursor: pointer;
+}
+.add {
+  grid-area: add;
+  justify-self: center;
+  margin: 20px;
+}
+
+/* ==========
+ARTICLE FOOTER
+========== */
+
+article footer {
+  grid-area: footer;
+}
+article footer p {
+  font-size: 13px;
+  color: #999;
+}
+article footer div {
+  display: flex;
+  justify-content: space-between;
+}
+article footer button {
+  width: 300px;
+  padding-top: 13px;
+}
+
+/* ==========
+More articles
+========== */
+
+.more.articles {
+  grid-area: more-articles;
+}
+.more.links {
+  grid-area: more-links;
+}
+.more.picks {
+  grid-area: more-picks;
+}
+.more.articles,
+.more.picks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px;
+  max-width: 860px;
+}
+.more {
+  border-top: 1px solid black;
+  padding: 20px 0;
+}
+.links {
+  margin-left: 30px;
+  max-width: 330px;
+}
+.more a.category {
+  grid-column: 1 / -1;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+}
+.more img {
+  max-width: 100%;
+}
+.more figcaption {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+}
+.more span,
+.links a + a {
+  display: block;
+  font-family: 'Literata', serif;
+  font-size: 18px;
+  margin: 7px 0;
+}
+.more span:hover,
+.links a + a:hover {
+  color: #666;
+}
+.more date {
+  font-size: 11px;
+  color: #999;
+}
+.links a + a {
+  font-size: 21px;
+  padding: 15px 0;
+  border-top: 1px solid #ccc;
+}
+.links a.category {
+  margin-bottom: 25px;
+}
+
+/* ==========
+SECTION FOOTER
+========== */
+
+section > footer {
+  position: relative;
+  margin: 15px 0;
+  padding-bottom: 10px;
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "logo space   space space  space home"
+    "news opinion arts  living more  subscribe"
+    "info info    info  info   info  info";
+  border-top: 1px solid rgb(226, 226, 226);
+}
+section > footer::before {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-top: 2px solid rgb(226, 226, 226);
+  position: absolute;
+  top: -4px;
+}
+section > footer img {
+  grid-area: logo;
+  margin: 10px 0 20px 0;
+  justify-self: left;
+}
+section > footer > a {
+  grid-area: home;
+  margin: 20px 0;
+  justify-self: right;
+  font-size: 11px;
+  color: #6288a5;
+}
+section > footer #news {
+  grid-area: news;
+}
+section > footer #opinion {
+  grid-area: opinion;
+}
+section > footer #arts {
+  grid-area: arts;
+}
+section > footer #living {
+  grid-area: living;
+}
+section > footer #more {
+  grid-area: more;
+}
+section > footer #subscribe {
+  grid-area: subscribe;
+  padding-left: 15px;
+  border-left: 1px solid rgb(226, 226, 226);
+}
+section > footer div {
+  color: #333;
+}
+section > footer div a {
+  display: block;
+  padding: 4px 0;
+  font-size: 14px;
+}
+section > footer div a:hover {
+  text-decoration: underline;
+}
+section > footer div h5 {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: bold;
+}
+section > footer .icon-links div {
+  display: block;
+  padding-bottom: 12px;
+}
+section > footer .icon-links a,
+section > footer .icon-links img {
+  display: inline;
+  margin: 0;
+  font-weight: bold;
+  font-size: 16px;
+  padding-right: 6px;
+}
+section > footer .subscription-links a,
+section > footer .settings-links a {
+  font-size: 11px;
+  padding: 7px 0;
+}
+section > footer .settings-links {
+  padding-top: 10px;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+section > footer .info {
+  grid-area: info;
+  margin-top: 8px;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+section > footer .info a {
+  display: inline;
+  padding: 0 5px;
+  font-size: 11px;
+  color: #999;
+}
+
+/* ==========
+MEDIA
+========== */
+
+@media all and (min-width:1600px) {
+  /* === Makeing blank space outside section wider === */
+  section {
+    grid-template-columns: 2fr 7fr 3fr 2fr;
+  }
+  article {
+    grid-template-columns: 2fr 6fr 4fr 2fr;
+  }
+  .across-add {
+    grid-template-columns: 2fr 6fr 4fr 2fr;
+  }
+  /* === allow header img bigger === */
+  header figure img {
+    max-width: 2007px;
+    max-height: 1129px;
+  }
+}
+@media all and (max-width:1200px) {
+  /* === Makeing blank space outside section narrower === */
+  section {
+    grid-template-columns: 0.5fr 7fr 3fr 0.5fr;
+  }
+  article {
+    grid-template-columns: 0.5fr 6fr 4fr 0.5fr;
+  }
+  .across-add {
+    grid-template-columns: 0.5fr 6fr 4fr 0.5fr;
+  }
+}
+@media all and (max-width:1024px) {
+  /* === Changing footer appearence === */
+  section {
+    grid-template-areas:
+      "space1  header        header     space2"
+      "article article       article    article"
+      "space3  more-articles more-links space4"
+      "space3  more-picks    more-links space4"
+      "footer  footer        footer     footer";
+  }
+  section > footer {
+    padding: 0 30px 10px 30px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "logo      space     home"
+      "news      news      news"
+      "opinion   opinion   opinion"
+      "arts      arts      arts"
+      "living    living    living"
+      "more      more      more"
+      "info      info      info";
+  }
+  section > footer div h5 {
+    margin: 0;
+    padding: 15px 0;
+    border-top: 1px solid rgb(226, 226, 226);
+    cursor: pointer;
+  }
+  section > footer div a {
+    display: none;
+  }
+  section > footer #subscribe {
+    display: none;
+  }
+  section > footer .info {
+    margin-top: 0;
+  }
+  section > footer .info .block-info {
+    display: block;
+    margin-bottom: 15px;
+  }
+}
+@media all and (max-width: 950px) {
+  /* === wider header photo caption === */
+  header figure figcaption {
+    grid-column: 1 / -1;
+  }
+  /* === sidebars gone === */
+  .signup-sidebar,
+  .editors-picks {
+    display: none;
+  }
+  /* === center tex in the article === */
+  article {
+    grid-template-areas:
+      "empty1   article-header   article-header       empty2"
+      "empty1   article-text-1   article-text-1       empty3"
+      "add-1    add-1            add-1                add-1"
+      "empty4   article-text-2   article-text-2       empty5"
+      "add-2    add-2            add-2                add-2"
+      "empty6   article-text-3   article-text-3       empty7"
+      "empty6   infographics     infographics         empty8"
+      "empty6   article-text-4   article-text-4       empty9"
+      "empty6   video            video                empty9"
+      "empty6   article-text-5   article-text-5       empty9"
+      "empty6   textimage        textimage            empty9"
+      "empty6   article-text-6   article-text-6       empty9"
+      "empty6   footer           footer               empty9";
+  }
+  /* === article part 1-6 wider margin === */
+  article .article-text {
+    margin: 0 10%;
+  }
+  /* === center add content === */
+  .across-add {
+    grid-template-areas:
+      "aside1 add add aside";
+  }
+  /* === cut down last article proposition in more articles section === */
+  .more.articles,
+  .more.picks {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 570px;
+  }
+  .more .last {
+    display: none;
+  }
+  /* === more links section more redable === */
+  .links {
+    min-width: 220px;
+  }
+  .links a + a {
+    font-size: 19px;
+  }
+  /* header title adjust*/
+  header h1 {
+    grid-column: 1 / -1;
+  }
+}
+@media all and (max-width: 700px) {
+  /* nav more redable */
+  .menu-items .page-category,
+  button.subscribe {
+    display: none;
+  }
+}
+@media all and (max-width: 640px) {
+  /* === more links gone === */
+  .links {
+    display: none;
+  }
+  section {
+    grid-template-areas:
+      "space1  header        header        space2"
+      "article article       article       article"
+      "space3  more-articles more-articles space4"
+      "space3  more-picks    more-picks    space4"
+      "footer  footer        footer        footer";
+  }
+  .more {
+    justify-content: center;
+  }
+  /* article text wider */
+  article .article-text {
+    margin: 0;
+  }
+  /* infographics more readable */
+  .infographics .process-container {
+    grid-template-columns: repeat(2, minmax(auto, 230px));
+  }
+  /* wideo adjust */
+  iframe {
+    width: 100%;
+  }
+}
+@media all and (max-width: 450px) {
+  /* no across adds */
+  .across-add {
+    display: none;
+  }
+  header h1 {
+    font-size: 30px;
+  }
+}
