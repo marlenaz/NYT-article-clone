@@ -21,7 +21,7 @@ Following The Odin Project course assignment. Task was about consolidate knowled
 ![Example screenshot](./img/screenshot.png)
 
 ## Preview
-![See the project previev](https://marlenaz.github.io/NYT-article-clone/)
+[See the project previev](https://marlenaz.github.io/NYT-article-clone/)
 ## Status
 Finished project
 
