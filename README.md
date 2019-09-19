@@ -18,7 +18,9 @@ Following The Odin Project course assignment. Task was about consolidate knowled
 
 
 ## Screenshots
-![Example screenshot](./img/screenshot.png)
+![Page screenshot](images/scr-1.png)
+![Page screenshot](images/scr-2.png)
+![Page screenshot](images/scr-3.png)
 
 ## Preview
 [See the project previev](https://marlenaz.github.io/NYT-article-clone/)
